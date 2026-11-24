@@ -28,7 +28,7 @@ IBM AltoroJ
 	<td valign="top" colspan="3" class="bb">
 		<h1>Administration Login</h1>
 		
-		<!-- Password: Altoro1234 -->
+		<!-- Password: Web3TaskAdmin2026 -->
 		
 		<form id="Default" method="post" action="doAdminLogin">
 		<!-- <img id="captcha" src="getCaptcha.jsp" /><br /> -->

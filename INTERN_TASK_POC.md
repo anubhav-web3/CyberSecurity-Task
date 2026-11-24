@@ -1,8 +1,8 @@
-# Cybersecurity Internship Assessment — POC Proposal
+# Web3Task — Cybersecurity Internship Assessment POC
 
 > **Audience:** Senior Developer / Hiring Team Review  
-> **Base Application:** AltoroJ (Java / JSP / Servlet banking web app with REST API & embedded Apache Derby DB)  
-> **Status:** Working local build verified (Gradle + Apache Tomcat 9 / Java 17); Render Docker deployment config ready.
+> **Portal Branding:** Web3Task Finance & Treasury Portal *(custom-branded Java / JSP / Servlet banking & REST API sandbox with embedded Apache Derby DB)*  
+> **Status:** Rebranded for Web3Task, local build verified (Gradle + Apache Tomcat 9 / Java 17), Render Docker deployment ready (`web3task-security-portal`).
 
 ---
 
@@ -48,9 +48,9 @@ flowchart LR
 
 > *Copy/adapt this section when sending the task to interns.*
 
-### Task Title: Web Application Security Assessment
-- **Target URL:** `https://<your-deployed-url>/` *(or `http://localhost:8080/` if running locally via Docker)*
-- **Test Credentials:** Username `jsmith` / Password `demo1234`
+### Task Title: Web3Task Web Application Security Assessment
+- **Target URL:** `https://web3task-security-portal.onrender.com/` *(or `http://localhost:8080/` if running locally via Docker)*
+- **Test Credentials:** Username `intern` / Password `web3task123`
 - **Mode:** Black-box *(or Grey-box if we choose to share the source repo)*
 - **Recommended Timebox:** 2–4 hours (or 48-hour take-home window)
 
@@ -91,7 +91,7 @@ Each question below maps to verified weaknesses in this repository. Reviewer not
 ### Q4. Object Ownership & Client-Side State Trust (IDOR / Business Logic)
 - **Candidate Prompt:** Review account balance viewing, transaction history APIs, and the fund transfer workflow. Identify places where the server trusts client-supplied identifiers or cookies without verifying ownership or account state.
 - **Relevant Code:** `AltoroJ/WebContent/bank/balance.jsp`, `AltoroJ/src/com/ibm/security/appscan/altoromutual/api/AccountAPI.java`, `AltoroJ/src/com/ibm/security/appscan/altoromutual/util/OperationsUtil.java`
-- **Reviewer Concept Note:** Account endpoints return data for arbitrary account IDs without checking ownership against the authenticated user, transfers trust a client-supplied Base64 cookie (`AltoroAccounts`), and balances are not validated atomically. Candidates should advocate authoritative server-side ownership checks and transactional balance validation.
+- **Reviewer Concept Note:** Account endpoints return data for arbitrary account IDs without checking ownership against the authenticated user, transfers trust a client-supplied Base64 cookie (`Web3TaskAccounts`), and balances are not validated atomically. Candidates should advocate authoritative server-side ownership checks and transactional balance validation.
 
 ### Q5. API Token Design, Session Lifecycle & Request Integrity
 - **Candidate Prompt:** Examine how the REST API authenticates requests, how browser sessions are terminated on logout, and how state-changing fund transfers are submitted. Identify flaws in session/token management and request integrity.
@@ -104,14 +104,16 @@ Each question below maps to verified weaknesses in this repository. Reviewer not
 
 ---
 
-## 5. Proposed Customizations ("Our Own Touch") — For Senior Dev Sign-Off
+## 5. Web3Task Customizations Applied & Optional Extensions
 
-Before rolling this out to interns, we can apply lightweight customizations so the project isn't immediately recognizable by name and reflects our domain:
+**Already applied in this POC:**
+- **Full Web3Task Rebranding:** Custom **Web3Task Finance & Treasury Portal** header/SVG emblem, modern dark-slate/indigo CSS theme, rebranded static pages, footer sandbox disclaimer (removing third-party demo links), and rebranded Swagger API docs.
+- **Custom Identifiers & Demo Credentials:** Renamed account cookie to `Web3TaskAccounts`, updated candidate credentials to `intern` / `web3task123`, updated admin portal password, and named the Render Blueprint `web3task-security-portal`.
 
-1. **Custom Rebranding:** Rename "Altoro Mutual" across `header.jspf`, `footer.jspf`, `index.jsp`, and `web.xml` to a fictional internal brand (e.g., *NovaTrust Bank* / *Acme FinTech*) and replace the logo/theme CSS.
-2. **Custom Scenario / Business Logic Challenge:** Add 1–2 company-relevant endpoints (e.g., an invoice download or profile update endpoint) tailored to our tech stack.
-3. **Optional Stored XSS Toggle:** Enable `enableFeedbackRetention=true` in `app.properties` if running isolated per-candidate instances so interns can also assess stored XSS in `/admin/feedbackReview.jsp`.
-4. **Black-Box vs. Grey-Box Decision:** Decide whether interns receive only the URL (pure discovery) or both the URL and a zipped repo (discovery + secure code patch).
+**Optional next extensions (for Senior Dev sign-off):**
+1. **Custom Domain Scenario:** Add 1–2 Web3Task-specific endpoints (e.g., an invoice export or wallet profile endpoint) tailored to our production stack.
+2. **Optional Stored XSS Toggle:** Enable `enableFeedbackRetention=true` in `app.properties` if running isolated per-candidate containers so interns can also assess stored XSS in `/admin/feedbackReview.jsp`.
+3. **Black-Box vs. Grey-Box Decision:** Decide whether interns receive only the Render URL (pure discovery) or both the URL and a zipped repo (discovery + secure code patch).
 
 ---
 
@@ -131,4 +133,4 @@ JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home /opt/ho
 1. Push this repository (including `Dockerfile`, `render.yaml`, and `AltoroJ/`) to GitHub.
 2. In Render, choose **New + -> Blueprint** (uses `render.yaml`) or **New + -> Web Service -> Docker**.
 3. Render builds the WAR via Gradle and deploys it at the root URL (`https://<service>.onrender.com/`).
-4. Verify homepage (`200 OK`) and test login (`jsmith` / `demo1234`), then share the Candidate Brief.
+4. Verify homepage (`200 OK`) and test login (`intern` / `web3task123`), then share the Candidate Brief.

@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "AltoroJ REST API",
+    "title": "Web3Task Finance REST API",
     "version": "1.0.2"
   },
   
-  "basePath": "/AltoroJ/api",
+  "basePath": "/api",
   "tags": [
     {
       "name": "1. Login",
@@ -509,11 +509,11 @@
       "properties": {
         "username": {
           "type": "string",
-          "example": "jsmith"
+          "example": "intern"
         },
         "password": {
           "type": "string",
-          "example": "demo1234"
+          "example": "web3task123"
         }
       }
     },
@@ -574,7 +574,7 @@
         "email": {
           "type": "string",
           "format": "email",
-          "example": "jsmtih@altoromutual.com"
+          "example": "intern@web3task.com"
         },
         "subject": {
           "type": "string",

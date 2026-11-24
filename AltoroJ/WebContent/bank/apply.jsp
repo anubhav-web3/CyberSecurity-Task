@@ -27,8 +27,8 @@ IBM AltoroJ
 	<jsp:include page="membertoc.jspf"/>
     <td valign="top" colspan="3" class="bb">
 		<div class="fl" style="width: 99%;">
-			<h1>Altoro Mutual Gold Visa Application</h1>
-			<span><p><b>No application is needed.</b>To approve your new $10000 Altoro Mutual Gold Visa<br />with an 7.9% APR simply enter your password below.</p>
+			<h1>Web3Task Corporate Card Application</h1>
+			<span><p><b>No application is needed.</b> To approve your new $10000 Web3Task Corporate Card<br />with a 7.9% APR simply enter your password below.</p>
 			<p><span id="_ctl0__ctl0_Content_Main_message" style="color:#FF0066;font-size:12pt;font-weight:bold;">
 			<%
 				java.lang.String error = (String)request.getSession(true).getAttribute("loginError");

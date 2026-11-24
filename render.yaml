@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: cybersecurity-intern-task
+    name: web3task-security-portal
     runtime: docker
     dockerfilePath: ./Dockerfile
     plan: free

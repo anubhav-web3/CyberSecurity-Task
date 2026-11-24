@@ -58,14 +58,14 @@ import com.ibm.security.appscan.altoromutual.model.User;
 public class ServletUtil {
 
 	public static final String SESSION_ATTR_USER = "user";
-	public static final String SESSION_ATTR_ADMIN_VALUE = "altoroadmin";
+	public static final String SESSION_ATTR_ADMIN_VALUE = "web3taskadmin";
 	public static final String SESSION_ATTR_ADMIN_KEY = "admin";
 
 	public static HashMap<String, String> demoProperties = null;
 	public static File logFile = null;
 	public static boolean swaggerInitialized = false;
 
-	public static final String ALTORO_COOKIE = "AltoroAccounts";
+	public static final String ALTORO_COOKIE = "Web3TaskAccounts";
 
 	public static final String EMAIL_REGEXP = "^..*@..*\\...*$";
 

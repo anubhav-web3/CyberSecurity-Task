@@ -51,7 +51,7 @@ IBM AltoroJ
 		}
 		</script>
 		
-		<!-- Be careful what you change.  All changes are made directly to AltoroJ database. -->
+		<!-- Be careful what you change.  All changes are made directly to Web3Task database. -->
 		<div class="fl" style="width: 99%;">
 		<p><span style="color:#FF0066;font-size:12pt;font-weight:bold;">
 		<%

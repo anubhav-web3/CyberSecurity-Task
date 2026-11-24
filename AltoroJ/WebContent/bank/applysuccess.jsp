@@ -28,9 +28,9 @@ IBM AltoroJ
     <td valign="top" colspan="3" class="bb">
 		<div class="fl" style="width: 99%;">
 		
-		<h1>Altoro Mutual Gold Visa Application</h1>
+		<h1>Web3Task Corporate Card Application</h1>
 		
-		<span id="_ctl0__ctl0_Content_Main_lblMessage">Your new Altoro Mutual Gold VISA with a $10000 and 7.9% APR will be sent in the mail.</span>
+		<span id="_ctl0__ctl0_Content_Main_lblMessage">Your new Web3Task Corporate Card with a $10000 limit and 7.9% APR will be sent in the mail.</span>
 		</div>
 	</td>	
 </div>

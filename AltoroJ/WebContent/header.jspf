@@ -1,62 +1,60 @@
 <%@page import="com.ibm.security.appscan.altoromutual.util.ServletUtil"%>
-<%
-/**
- This application is for demonstration use only. It contains known application security
-vulnerabilities that were created expressly for demonstrating the functionality of
-application security testing tools. These vulnerabilities may present risks to the
-technical environment in which the application is installed. You must delete and
-uninstall this demonstration application upon completion of the demonstration for
-which it is intended. 
-
-IBM DISCLAIMS ALL LIABILITY OF ANY KIND RESULTING FROM YOUR USE OF THE APPLICATION
-OR YOUR FAILURE TO DELETE THE APPLICATION FROM YOUR ENVIRONMENT UPON COMPLETION OF
-A DEMONSTRATION. IT IS YOUR RESPONSIBILITY TO DETERMINE IF THE PROGRAM IS APPROPRIATE
-OR SAFE FOR YOUR TECHNICAL ENVIRONMENT. NEVER INSTALL THE APPLICATION IN A PRODUCTION
-ENVIRONMENT. YOU ACKNOWLEDGE AND ACCEPT ALL RISKS ASSOCIATED WITH THE USE OF THE APPLICATION.
-
-IBM AltoroJ
-(c) Copyright IBM Corp. 2008, 2013 All Rights Reserved.
-*/
-%> 
-
 <!-- BEGIN HEADER -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<!DOCTYPE html>
+<html lang="en">
 
 <% boolean loggedIn = request.getSession().getAttribute("user") != null; %>
 
 <head>
-	<title>Altoro Mutual</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Web3Task Finance — Online Banking Portal</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="<%=request.getContextPath()%>/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body style="margin-top:5px;">
+<body>
 
-<div id="header" style="margin-bottom:5px; width: 99%;">
+<div class="page-shell">
+<div id="header">
   <form id="frmSearch" method="get" action="<%=request.getContextPath()%>/search.jsp">
-	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+	  <table class="header-table" width="100%" border="0" cellpadding="0" cellspacing="0">
 		  <tr>
-		      <td rowspan="2"><a id="HyperLink1" href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo.gif" width=283 height=80/></a></td>
-			  <td align="right" valign="top">
-  			  <a id="LoginLink" href="<%=(!loggedIn)?request.getContextPath()+"/login.jsp":request.getContextPath()+"/logout.jsp"%>"><font style="font-weight: bold; color: red;"><%=(!loggedIn)?"Sign In":"Sign Off"%></font></a> | <a id="HyperLink3" href="<%=request.getContextPath()%>/index.jsp?content=inside_contact.htm">Contact Us</a> | <a id="HyperLink4" href="<%=request.getContextPath()%>/feedback.jsp">Feedback</a> | <label for="txtSearch">Search</label>
-          <input type="text" name="query" id="query" accesskey="S" />
-          <input type="submit" value="Go" />
+		      <td class="brand-cell">
+		        <a id="HyperLink1" class="brand-link" href="<%=request.getContextPath()%>/index.jsp">
+		          <span class="brand-badge">
+		            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+		              <polygon points="16,2 29,9.5 29,22.5 16,30 3,22.5 3,9.5" stroke="#38BDF8" stroke-width="2.2" fill="rgba(56,189,248,0.14)"/>
+		              <path d="M9.5 11.5L13 21.5L16 14L19 21.5L22.5 11.5" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+		            </svg>
+		          </span>
+		          <span class="brand-text">
+		            <span class="brand-name">Web3Task</span>
+		            <span class="brand-sub">FINANCE &amp; TREASURY PORTAL</span>
+		          </span>
+		        </a>
+		      </td>
+			  <td class="header-actions" align="right" valign="middle">
+			    <div class="top-links">
+  			      <a id="LoginLink" class="login-pill" href="<%=(!loggedIn)?request.getContextPath()+"/login.jsp":request.getContextPath()+"/logout.jsp"%>"><%=(!loggedIn)?"Sign In":"Sign Off"%></a>
+  			      <a id="HyperLink3" href="<%=request.getContextPath()%>/index.jsp?content=inside_contact.htm">Contact Us</a>
+  			      <a id="HyperLink4" href="<%=request.getContextPath()%>/feedback.jsp">Feedback</a>
+  			    </div>
+  			    <div class="search-bar">
+                  <label for="query">Search</label>
+                  <input type="text" name="query" id="query" accesskey="S" placeholder="Search portal..." />
+                  <input type="submit" value="Go" />
+                </div>
 			  </td>
-		  </tr>
-		  <tr>
-			  <td align="right" style="background-image:url('<%=request.getContextPath()%>/images/gradient.jpg');padding:0px;margin:0px;"><img src="<%=request.getContextPath()%>/images/header_pic.jpg" alt="" width=354 height=60/></td>
 		  </tr>
 	  </table>
 	</form>
 </div>
 
-<table cellspacing="0" width="100%">
-  <tr>
-    <td width="25%" class="bt br bb"><div id="Header1"><img id="Image1" src="<%=request.getContextPath()%>/images/pf_lock.gif" width=12 height=14 style="vertical-align: bottom;" alt="Secure Login"/> &nbsp; <a id="AccountLink" href="<%=(loggedIn)?request.getContextPath()+"/bank/main.jsp":request.getContextPath()+"/login.jsp"%>" class="focus" ><%=(loggedIn)?"MY ACCOUNT":"ONLINE BANKING LOGIN"%></a></div></td>
-    <td width="25%" class="cc bt br bb"><div id="Header2"><a id="LinkHeader2" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=personal.htm" >PERSONAL</a></div></td>
-    <td width="25%" class="cc bt br bb"><div id="Header3"><a id="LinkHeader3" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=business.htm" >SMALL BUSINESS</a></div></td>
-    <td width="25%" class="cc bt bb"><div id="Header4"><a id="LinkHeader4" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=inside.htm">INSIDE ALTORO MUTUAL</a></div></td>
+<table class="nav-and-body" cellspacing="0" width="100%">
+  <tr class="nav-row">
+    <td width="25%" class="bt br bb nav-cell nav-primary"><div id="Header1"><a id="AccountLink" href="<%=(loggedIn)?request.getContextPath()+"/bank/main.jsp":request.getContextPath()+"/login.jsp"%>" class="focus"><%=(loggedIn)?"MY ACCOUNT":"ONLINE BANKING LOGIN"%></a></div></td>
+    <td width="25%" class="cc bt br bb nav-cell"><div id="Header2"><a id="LinkHeader2" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=personal.htm">PERSONAL</a></div></td>
+    <td width="25%" class="cc bt br bb nav-cell"><div id="Header3"><a id="LinkHeader3" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=business.htm">SMALL BUSINESS</a></div></td>
+    <td width="25%" class="cc bt bb nav-cell"><div id="Header4"><a id="LinkHeader4" class="focus" href="<%=request.getContextPath()%>/index.jsp?content=inside.htm">INSIDE WEB3TASK</a></div></td>
   </tr>
   <tr>
   
