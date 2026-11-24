@@ -9,7 +9,7 @@
 	<title>Web3Task Finance — Online Banking Portal</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="<%=request.getContextPath()%>/style.css" rel="stylesheet" type="text/css" />
+  <link href="<%=request.getContextPath()%>/style.css?v=3" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 		      <td class="brand-cell">
 		        <a id="HyperLink1" class="brand-link" href="<%=request.getContextPath()%>/index.jsp">
 		          <span class="brand-logo-wrap">
-		            <img src="<%=request.getContextPath()%>/images/web3task-logo.jpeg" alt="Web3Task Logo" class="brand-logo-img" />
+		            <img src="<%=request.getContextPath()%>/images/web3task-logo.jpeg" alt="Web3Task Logo" class="brand-logo-img" width="52" height="52" />
 		          </span>
 		          <span class="brand-text">
 		            <span class="brand-name">Web3Task</span>
