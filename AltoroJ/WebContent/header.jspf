@@ -20,15 +20,12 @@
 		  <tr>
 		      <td class="brand-cell">
 		        <a id="HyperLink1" class="brand-link" href="<%=request.getContextPath()%>/index.jsp">
-		          <span class="brand-badge">
-		            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-		              <polygon points="16,2 29,9.5 29,22.5 16,30 3,22.5 3,9.5" stroke="#38BDF8" stroke-width="2.2" fill="rgba(56,189,248,0.14)"/>
-		              <path d="M9.5 11.5L13 21.5L16 14L19 21.5L22.5 11.5" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-		            </svg>
+		          <span class="brand-logo-wrap">
+		            <img src="<%=request.getContextPath()%>/images/web3task-logo.jpeg" alt="Web3Task Logo" class="brand-logo-img" />
 		          </span>
 		          <span class="brand-text">
 		            <span class="brand-name">Web3Task</span>
-		            <span class="brand-sub">FINANCE &amp; TREASURY PORTAL</span>
+		            <span class="brand-sub">THINK CREATIVE &bull; FINANCE PORTAL</span>
 		          </span>
 		        </a>
 		      </td>
