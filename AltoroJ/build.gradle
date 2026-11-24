@@ -1,0 +1,50 @@
+
+plugins {
+    id 'war'
+}
+
+def webAppDir = file('WebContent')
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['src']
+            exclude '**/*.java'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "${webAppDir}/WEB-INF/lib", include: '*.jar')
+    implementation 'commons-codec:commons-codec:1.6'
+    implementation 'commons-lang:commons-lang:2.5'
+    implementation 'com.hynnet:commons-lang3:3.3.2'
+    implementation 'org.apache.derby:derby:10.8.2.2'
+    implementation 'org.glassfish.jersey.core:jersey-server:2.27'
+    implementation 'org.glassfish.jersey.containers:jersey-container-servlet:2.27'
+    implementation 'org.glassfish.jersey.inject:jersey-hk2:2.27'
+    implementation 'log4j:log4j:1.2.16'
+    implementation 'org.apache.wink:wink-json4j:1.4'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'javax.activation:javax.activation-api:1.2.0'
+    providedCompile 'javax:javaee-api:7.0'
+}
+
+tasks.named('war') {
+    webAppDirectory = webAppDir
+    archiveFileName = 'altoromutual.war'
+    exclude 'WEB-INF/classes/**/*.class'
+    exclude 'WEB-INF/lib/**/*.jar'
+}

@@ -1,0 +1,4 @@
+.DS_Store
+AltoroJ/build/
+AltoroJ/.gradle/
+*.log
